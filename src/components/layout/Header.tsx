@@ -6,12 +6,32 @@ import logoUrl from "@/assets/logo-redbuck.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleHashLink = useCallback((path: string) => {
+    const [route, hash] = path.split("#");
+    const targetRoute = route || "/";
+    
+    if (location.pathname === targetRoute && hash) {
+      const el = document.getElementById(hash);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(targetRoute);
+      if (hash) {
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          el?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    }
+  }, [location.pathname, navigate]);
 
   const navLinks = [
     { name: "Inicio", path: "/" },
     { name: "Equipos", path: "/equipos" },
-    { name: "Soluciones", path: "/#soluciones" },
-    { name: "Casos de éxito", path: "/#casos" },
+    { name: "Soluciones", path: "/#soluciones", isHash: true },
+    { name: "Casos de éxito", path: "/#casos", isHash: true },
     { name: "Contacto", path: "/contacto" },
   ];
 
