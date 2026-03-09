@@ -54,7 +54,7 @@ const Contacto = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Showroom</h4>
-                  <p className="text-muted-foreground">Av. Industrial 123,<br/>Parque Industrial,<br/>Monterrey, N.L. C.P. 64000</p>
+                  <p className="text-muted-foreground">Av. Circunvalación Sur #4101,<br/>Col. Las Fuentes,<br/>C.P. 45070, Zapopan, Jalisco.</p>
                 </div>
               </div>
 
@@ -70,9 +70,20 @@ const Contacto = () => {
               </div>
             </div>
             
-            <div className="h-64 w-full bg-gray-300 rounded-xl overflow-hidden border relative flex items-center justify-center">
-              <span className="text-gray-500 font-medium">[Mapa de Ubicación]</span>
-              {/* Aquí se incrustaría el iframe de Google Maps */}
+            <div className="w-full rounded-xl overflow-hidden border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.8!2d-103.394!3d20.659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b1f4a5b6c2e7%3A0x1234567890abcdef!2sARREOLA%20EQUIPOS%20Y%20SERVICIOS%20SA%20DE%20CV!5e0!3m2!1ses!2smx!4v1700000000000"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación Redbuck Equipment"
+              />
+              <a href="https://maps.app.goo.gl/SgWZRvVD5L3AUQ9QA" target="_blank" rel="noopener noreferrer" className="block text-center text-sm text-primary font-semibold py-3 hover:underline">
+                Ver en Google Maps →
+              </a>
             </div>
           </div>
 
