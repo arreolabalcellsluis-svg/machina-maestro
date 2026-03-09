@@ -272,7 +272,11 @@ export const products: Product[] = [
       "Llanteras"
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80",
-    galeria: [],
+    galeria: [
+      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80"
+    ],
     garantia: "6 meses.",
     instalacion: "No requiere.",
     refaccionesRelacionadas: ["Kit de sellos"],
