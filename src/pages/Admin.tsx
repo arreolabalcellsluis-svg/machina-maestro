@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import BannerSettings from "@/components/admin/BannerSettings";
 
 export default function Admin() {
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<"products" | "banners">("products");
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -63,20 +65,32 @@ export default function Admin() {
     return null;
   }
 
+
   return (
     <div className="container mx-auto p-8">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold">Panel de Administración</h1>
         <Button variant="outline" onClick={handleLogout}>Cerrar Sesión</Button>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div className="flex gap-4 mb-8 border-b pb-4">
+        <Button variant={activeTab === "products" ? "default" : "outline"} onClick={() => setActiveTab("products")}>
+          Gestión de Productos
+        </Button>
+        <Button variant={activeTab === "banners" ? "default" : "outline"} onClick={() => setActiveTab("banners")}>
+          Banners e Imágenes
+        </Button>
+      </div>
+
+      {activeTab === "products" && (
         <div className="border p-6 rounded-lg shadow-sm">
           <h2 className="text-xl font-semibold mb-4">Gestión de Productos</h2>
-          <p className="text-gray-600 mb-4">Administra el catálogo de productos, categorías, imágenes y archivos.</p>
+          <p className="text-muted-foreground mb-4">Administra el catálogo de productos, categorías, imágenes y archivos.</p>
           <Button>Administrar Productos</Button>
         </div>
-      </div>
+      )}
+
+      {activeTab === "banners" && <BannerSettings />}
     </div>
   );
 }
