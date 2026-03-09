@@ -70,7 +70,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-2 text-sm font-bold text-foreground">
             <Phone className="h-4 w-4 text-primary" />
-            <span>800 123 4567</span>
+            <span>33 1387 2649</span>
           </div>
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
