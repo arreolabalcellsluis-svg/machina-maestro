@@ -1,17 +1,32 @@
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ChevronRight, Download, CheckCircle2, Wrench, ShieldCheck, FileText, Check } from "lucide-react";
+import { ChevronRight, Download, CheckCircle2, Wrench, ShieldCheck, FileText, Check, X, ChevronLeft, ChevronRight as ChevronRightIcon } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Producto = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = products.find(p => p.slug === slug);
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!product) {
     return <Navigate to="/equipos" />;
   }
+
+  const allImages = [product.imagenPrincipal, ...product.galeria.filter(img => img !== product.imagenPrincipal)];
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const prevImage = () => setLightboxIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+  const nextImage = () => setLightboxIndex((prev) => (prev + 1) % allImages.length);
 
   return (
     <div className="bg-white min-h-screen pb-20">
@@ -32,17 +47,24 @@ const Producto = () => {
           
           {/* Gallery Col */}
           <div className="space-y-4">
-            <div className="bg-secondary/20 border rounded-xl p-8 flex items-center justify-center h-[500px]">
+            <div 
+              className="bg-secondary/20 border rounded-xl p-8 flex items-center justify-center h-[500px] cursor-zoom-in"
+              onClick={() => openLightbox(selectedImage)}
+            >
               <img 
-                src={product.imagenPrincipal} 
+                src={allImages[selectedImage]} 
                 alt={product.nombre} 
                 className="max-h-full object-contain mix-blend-multiply"
               />
             </div>
-            {product.galeria.length > 1 && (
+            {allImages.length > 1 && (
               <div className="grid grid-cols-4 gap-4">
-                {product.galeria.map((img, i) => (
-                  <div key={i} className="bg-secondary/20 border rounded-lg p-2 h-24 flex items-center justify-center cursor-pointer hover:border-primary transition-colors">
+                {allImages.map((img, i) => (
+                  <div 
+                    key={i} 
+                    className={`bg-secondary/20 border-2 rounded-lg p-2 h-24 flex items-center justify-center cursor-pointer transition-colors ${selectedImage === i ? 'border-primary' : 'border-transparent hover:border-primary/50'}`}
+                    onClick={() => setSelectedImage(i)}
+                  >
                     <img src={img} alt="" className="max-h-full object-contain mix-blend-multiply" />
                   </div>
                 ))}
@@ -168,6 +190,28 @@ const Producto = () => {
         </div>
 
       </div>
+
+      {/* Lightbox */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none flex items-center justify-center">
+          <button onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors">
+            <ChevronLeft className="h-6 w-6 text-white" />
+          </button>
+          <div className="flex items-center justify-center w-full h-[85vh] p-8">
+            <img 
+              src={allImages[lightboxIndex]} 
+              alt={product.nombre} 
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+          <button onClick={nextImage} className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors">
+            <ChevronRightIcon className="h-6 w-6 text-white" />
+          </button>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
+            {lightboxIndex + 1} / {allImages.length}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
