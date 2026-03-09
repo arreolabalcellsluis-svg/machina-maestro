@@ -184,7 +184,11 @@ export const products: Product[] = [
       "Agencias automotrices"
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80",
-    galeria: [],
+    galeria: [
+      "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80"
+    ],
     garantia: "1 año de garantía integral.",
     instalacion: "Instalación, calibración y capacitación presencial incluida.",
     refaccionesRelacionadas: ["Targets", "Mordazas"],
