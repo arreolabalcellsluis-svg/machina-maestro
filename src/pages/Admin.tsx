@@ -82,13 +82,7 @@ export default function Admin() {
         </Button>
       </div>
 
-      {activeTab === "products" && (
-        <div className="border p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold mb-4">Gestión de Productos</h2>
-          <p className="text-muted-foreground mb-4">Administra el catálogo de productos, categorías, imágenes y archivos.</p>
-          <Button>Administrar Productos</Button>
-        </div>
-      )}
+      {activeTab === "products" && <ProductManager />}
 
       {activeTab === "banners" && <BannerSettings />}
     </div>
