@@ -3,8 +3,8 @@ import { MessageCircle } from "lucide-react";
 const WhatsAppButton = () => {
   const whatsappNumber = "528100000000"; // Reemplazar con el real
   const defaultMessage = "Hola REDBUCK, me interesa cotizar equipo para mi taller.";
-  
-  const href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+  const href = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(defaultMessage)}`;
+
 
   return (
     <a
