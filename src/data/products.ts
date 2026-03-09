@@ -228,7 +228,11 @@ export const products: Product[] = [
       "Talleres de hojalatería y pintura"
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80",
-    galeria: [],
+    galeria: [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80"
+    ],
     garantia: "1 año.",
     instalacion: "Requiere instalación eléctrica trifásica.",
     refaccionesRelacionadas: ["Aceite compresor", "Filtro de aire", "Bandas"],
