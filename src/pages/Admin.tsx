@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import BannerSettings from "@/components/admin/BannerSettings";
 
 export default function Admin() {
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
