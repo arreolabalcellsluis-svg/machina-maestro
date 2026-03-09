@@ -32,7 +32,7 @@ const Contacto = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Ventas</h4>
-                  <p className="text-muted-foreground">800 123 4567</p>
+                  <p className="text-muted-foreground">33 1387 2649</p>
                   <p className="text-muted-foreground">81 2345 6789</p>
                 </div>
               </div>
