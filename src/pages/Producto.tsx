@@ -215,6 +215,5 @@ const Producto = () => {
     </div>
   );
 };
-};
 
 export default Producto;
