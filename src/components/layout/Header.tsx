@@ -1,17 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, Search, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import logoUrl from "@/assets/logo-redbuck.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleHashLink = useCallback((path: string) => {
+    const [route, hash] = path.split("#");
+    const targetRoute = route || "/";
+    
+    if (location.pathname === targetRoute && hash) {
+      const el = document.getElementById(hash);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(targetRoute);
+      if (hash) {
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          el?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    }
+  }, [location.pathname, navigate]);
 
   const navLinks = [
     { name: "Inicio", path: "/" },
     { name: "Equipos", path: "/equipos" },
-    { name: "Soluciones", path: "/#soluciones" },
-    { name: "Casos de éxito", path: "/#casos" },
+    { name: "Soluciones", path: "/#soluciones", isHash: true },
+    { name: "Casos de éxito", path: "/#casos", isHash: true },
     { name: "Contacto", path: "/contacto" },
   ];
 
@@ -25,15 +45,25 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-medium">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.path}
-              className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.isHash ? (
+              <button
+                key={link.name}
+                onClick={() => handleHashLink(link.path)}
+                className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
+              >
+                {link.name}
+              </button>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
+              >
+                {link.name}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Desktop Actions */}
@@ -67,16 +97,26 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden border-t bg-background p-4 absolute w-full left-0 top-20 shadow-lg">
           <nav className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.path}
-                className="text-base font-semibold text-foreground hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.isHash ? (
+                <button
+                  key={link.name}
+                  className="text-base font-semibold text-foreground hover:text-primary text-left"
+                  onClick={() => { setIsMenuOpen(false); handleHashLink(link.path); }}
+                >
+                  {link.name}
+                </button>
+              ) : (
+                <Link 
+                  key={link.name} 
+                  to={link.path}
+                  className="text-base font-semibold text-foreground hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
             <div className="pt-4 border-t flex flex-col gap-4">
               <div className="flex items-center gap-2 font-bold">
                 <Phone className="h-5 w-5 text-primary" />
