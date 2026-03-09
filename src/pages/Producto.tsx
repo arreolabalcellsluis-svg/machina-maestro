@@ -10,10 +10,23 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 const Producto = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = products.find(p => p.slug === slug);
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!product) {
     return <Navigate to="/equipos" />;
   }
+
+  const allImages = [product.imagenPrincipal, ...product.galeria.filter(img => img !== product.imagenPrincipal)];
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const prevImage = () => setLightboxIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+  const nextImage = () => setLightboxIndex((prev) => (prev + 1) % allImages.length);
 
   return (
     <div className="bg-white min-h-screen pb-20">
