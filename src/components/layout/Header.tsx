@@ -68,10 +68,10 @@ const Header = () => {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="hidden lg:flex items-center gap-2 text-sm font-bold text-foreground">
+          <a href="https://wa.me/523313872649?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20Redbuck%20Equipment." target="_blank" rel="noopener noreferrer" className="hidden lg:flex items-center gap-2 text-sm font-bold text-foreground hover:text-primary transition-colors">
             <Phone className="h-4 w-4 text-primary" />
             <span>33 1387 2649</span>
-          </div>
+          </a>
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
           </Button>
