@@ -14,6 +14,18 @@ const categorias = Array.from(new Set([...products.map(p => p.categoria), ...ext
 const Equipos = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [catFilter, setCatFilter] = useState<string>("Todas");
+  const [bannerImage, setBannerImage] = useState("");
+
+  useEffect(() => {
+    supabase
+      .from("site_settings")
+      .select("value")
+      .eq("key", "equipos_banner_image")
+      .single()
+      .then(({ data }) => {
+        if (data?.value) setBannerImage(data.value);
+      });
+  }, []);
 
   const filteredProducts = products.filter(p => {
     const matchesSearch = p.nombre.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -25,10 +37,14 @@ const Equipos = () => {
   return (
     <div className="bg-secondary/30 min-h-screen pb-20">
       {/* Banner */}
-      <div className="bg-black text-white py-16">
-        <div className="container px-4">
+      <div className="relative bg-black text-white py-20 overflow-hidden">
+        {bannerImage && (
+          <img src={bannerImage} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40" />
+        <div className="container px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold uppercase mb-4">Catálogo de Equipos</h1>
-          <p className="text-xl text-gray-400 max-w-2xl">Encuentra la maquinaria ideal para potenciar la rentabilidad y eficiencia de tu negocio.</p>
+          <p className="text-xl text-white/70 max-w-2xl">Encuentra la maquinaria ideal para potenciar la rentabilidad y eficiencia de tu negocio.</p>
         </div>
       </div>
 
