@@ -40,7 +40,7 @@ const Header = () => {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoUrl} alt="REDBUCK Equipment" className="h-24 object-contain" />
+          <img src={logoUrl} alt="REDBUCK Equipment" className="h-[4.5rem] object-contain" />
         </Link>
 
         {/* Desktop Nav */}
