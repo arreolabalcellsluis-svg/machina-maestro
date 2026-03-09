@@ -190,8 +190,31 @@ const Producto = () => {
         </div>
 
       </div>
+
+      {/* Lightbox */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none flex items-center justify-center">
+          <button onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors">
+            <ChevronLeft className="h-6 w-6 text-white" />
+          </button>
+          <div className="flex items-center justify-center w-full h-[85vh] p-8">
+            <img 
+              src={allImages[lightboxIndex]} 
+              alt={product.nombre} 
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+          <button onClick={nextImage} className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors">
+            <ChevronRightIcon className="h-6 w-6 text-white" />
+          </button>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
+            {lightboxIndex + 1} / {allImages.length}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
+};
 };
 
 export default Producto;
