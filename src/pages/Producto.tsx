@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ChevronRight, Download, CheckCircle2, Wrench, ShieldCheck, FileText, Check } from "lucide-react";
+import { ChevronRight, Download, CheckCircle2, Wrench, ShieldCheck, FileText, Check, X, ChevronLeft, ChevronRight as ChevronRightIcon } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Producto = () => {
   const { slug } = useParams<{ slug: string }>();
