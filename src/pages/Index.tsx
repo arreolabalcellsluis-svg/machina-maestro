@@ -121,7 +121,9 @@ const Index = () => {
                 ))}
               </div>
               
-              <Button className="mt-10 h-12 px-8 font-bold">SOLICITAR ASESORÍA</Button>
+              <a href="https://wa.me/523313872649?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20Redbuck%20Equipment." target="_blank" rel="noopener noreferrer">
+                <Button className="mt-10 h-12 px-8 font-bold">SOLICITAR ASESORÍA</Button>
+              </a>
             </div>
             <div className="relative">
               <img 
