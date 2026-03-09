@@ -97,16 +97,26 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden border-t bg-background p-4 absolute w-full left-0 top-20 shadow-lg">
           <nav className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.path}
-                className="text-base font-semibold text-foreground hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.isHash ? (
+                <button
+                  key={link.name}
+                  className="text-base font-semibold text-foreground hover:text-primary text-left"
+                  onClick={() => { setIsMenuOpen(false); handleHashLink(link.path); }}
+                >
+                  {link.name}
+                </button>
+              ) : (
+                <Link 
+                  key={link.name} 
+                  to={link.path}
+                  className="text-base font-semibold text-foreground hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
             <div className="pt-4 border-t flex flex-col gap-4">
               <div className="flex items-center gap-2 font-bold">
                 <Phone className="h-5 w-5 text-primary" />
