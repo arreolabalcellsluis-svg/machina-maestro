@@ -10,7 +10,7 @@ const Footer = () => {
           
           {/* Brand Info */}
           <div className="flex flex-col justify-start">
-            <img src={logoUrl} alt="REDBUCK Logo" className="h-20 mb-2 brightness-0 invert" />
+            <img src={logoUrl} alt="REDBUCK Logo" className="h-20 mb-2" />
             <p className="text-gray-400 text-sm mb-4 leading-relaxed">
               Equipando los mejores talleres y llanteras de México. Maquinaria de grado industrial con soporte, garantía y refacciones.
             </p>
