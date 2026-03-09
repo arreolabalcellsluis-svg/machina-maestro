@@ -14,16 +14,126 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      products: {
+        Row: {
+          activo: boolean | null
+          aplicaciones: string[] | null
+          beneficios: string[] | null
+          caracteristicas: string[] | null
+          categoria: string
+          created_at: string | null
+          descripcion_comercial: string | null
+          descripcion_corta: string | null
+          destacado: boolean | null
+          especificaciones: Json | null
+          ficha_tecnica_pdf: string | null
+          galeria: string[] | null
+          garantia: string | null
+          id: string
+          imagen_principal: string | null
+          instalacion: string | null
+          marca: string | null
+          modelo: string | null
+          nombre: string
+          productos_relacionados: string[] | null
+          refacciones_relacionadas: string[] | null
+          sku: string | null
+          slug: string
+          subcategoria: string | null
+          updated_at: string | null
+          video_opcional: string | null
+        }
+        Insert: {
+          activo?: boolean | null
+          aplicaciones?: string[] | null
+          beneficios?: string[] | null
+          caracteristicas?: string[] | null
+          categoria: string
+          created_at?: string | null
+          descripcion_comercial?: string | null
+          descripcion_corta?: string | null
+          destacado?: boolean | null
+          especificaciones?: Json | null
+          ficha_tecnica_pdf?: string | null
+          galeria?: string[] | null
+          garantia?: string | null
+          id?: string
+          imagen_principal?: string | null
+          instalacion?: string | null
+          marca?: string | null
+          modelo?: string | null
+          nombre: string
+          productos_relacionados?: string[] | null
+          refacciones_relacionadas?: string[] | null
+          sku?: string | null
+          slug: string
+          subcategoria?: string | null
+          updated_at?: string | null
+          video_opcional?: string | null
+        }
+        Update: {
+          activo?: boolean | null
+          aplicaciones?: string[] | null
+          beneficios?: string[] | null
+          caracteristicas?: string[] | null
+          categoria?: string
+          created_at?: string | null
+          descripcion_comercial?: string | null
+          descripcion_corta?: string | null
+          destacado?: boolean | null
+          especificaciones?: Json | null
+          ficha_tecnica_pdf?: string | null
+          galeria?: string[] | null
+          garantia?: string | null
+          id?: string
+          imagen_principal?: string | null
+          instalacion?: string | null
+          marca?: string | null
+          modelo?: string | null
+          nombre?: string
+          productos_relacionados?: string[] | null
+          refacciones_relacionadas?: string[] | null
+          sku?: string | null
+          slug?: string
+          subcategoria?: string | null
+          updated_at?: string | null
+          video_opcional?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +260,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
