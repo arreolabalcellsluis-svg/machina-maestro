@@ -16,17 +16,22 @@ const LeadForm = ({ productoPredefinido = "", origen = "Sitio Web General" }: Le
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    
-    // Aquí iría la lógica de conexión al CRM
-    setTimeout(() => {
-      setIsLoading(false);
-      toast({
-        title: "¡Solicitud enviada!",
-        description: "Un asesor de REDBUCK se pondrá en contacto contigo pronto.",
-      });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+    const form = e.target as HTMLFormElement;
+    const nombre = (form.querySelector('#nombre') as HTMLInputElement)?.value || "";
+    const empresa = (form.querySelector('#empresa') as HTMLInputElement)?.value || "";
+    const telefono = (form.querySelector('#telefono') as HTMLInputElement)?.value || "";
+    const ciudad = (form.querySelector('#ciudad') as HTMLInputElement)?.value || "";
+    const equipo = (form.querySelector('#equipo') as HTMLInputElement)?.value || "";
+    const mensaje = (form.querySelector('#mensaje') as HTMLTextAreaElement)?.value || "";
+
+    const texto = `Hola, soy *${nombre}* de *${empresa}*.%0A📍 ${ciudad}%0A📞 ${telefono}%0A%0A🔧 Equipo de interés: ${equipo || "No especificado"}%0A💬 ${mensaje || "Me gustaría recibir cotización."}%0A%0AOrigen: ${origen}`;
+
+    window.open(`https://wa.me/523313872649?text=${encodeURI(texto)}`, "_blank");
+
+    toast({
+      title: "¡Redirigiendo a WhatsApp!",
+      description: "Se abrirá WhatsApp para enviar tu solicitud.",
+    });
   };
 
   return (
