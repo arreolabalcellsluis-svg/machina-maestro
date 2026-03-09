@@ -45,15 +45,25 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-medium">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.path}
-              className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.isHash ? (
+              <button
+                key={link.name}
+                onClick={() => handleHashLink(link.path)}
+                className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
+              >
+                {link.name}
+              </button>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors"
+              >
+                {link.name}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Desktop Actions */}
