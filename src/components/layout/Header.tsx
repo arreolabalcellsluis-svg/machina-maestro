@@ -70,7 +70,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-2 text-sm font-bold text-foreground">
             <Phone className="h-4 w-4 text-primary" />
-            <span>800 123 4567</span>
+            <span>33 1387 2649</span>
           </div>
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
@@ -120,7 +120,7 @@ const Header = () => {
             <div className="pt-4 border-t flex flex-col gap-4">
               <div className="flex items-center gap-2 font-bold">
                 <Phone className="h-5 w-5 text-primary" />
-                <span>800 123 4567</span>
+                <span>33 1387 2649</span>
               </div>
               <Link to="/contacto" onClick={() => setIsMenuOpen(false)}>
                 <Button className="w-full bg-primary hover:bg-primary/90">Cotizar Ahora</Button>
