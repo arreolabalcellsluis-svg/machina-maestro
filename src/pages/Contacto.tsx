@@ -54,7 +54,7 @@ const Contacto = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Showroom</h4>
-                  <p className="text-muted-foreground">Av. Industrial 123,<br/>Parque Industrial,<br/>Monterrey, N.L. C.P. 64000</p>
+                  <p className="text-muted-foreground">Av. Circunvalación Sur #4101,<br/>Col. Las Fuentes,<br/>C.P. 45070, Zapopan, Jalisco.</p>
                 </div>
               </div>
 
