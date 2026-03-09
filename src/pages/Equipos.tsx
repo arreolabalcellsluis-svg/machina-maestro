@@ -7,7 +7,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { products } from "@/data/products";
 
-const categorias = Array.from(new Set(products.map(p => p.categoria)));
+const extraCategorias = ["Equipo de lubricación", "Equipo de diagnóstico", "Otros"];
+const categorias = Array.from(new Set([...products.map(p => p.categoria), ...extraCategorias]));
 
 const Equipos = () => {
   const [searchTerm, setSearchTerm] = useState("");
