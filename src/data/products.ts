@@ -91,7 +91,10 @@ export const products: Product[] = [
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80",
     galeria: [
-      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80"
+      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80"
     ],
     garantia: "1 año de garantía contra defectos de fábrica.",
     instalacion: "Instalación sencilla. Requiere conexión a compresor de aire y toma eléctrica estándar.",
