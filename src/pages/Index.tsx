@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, ShieldCheck, MapPin, Truck, Wrench } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
 import heroImg from "@/assets/hero-equipment.jpg";
-import { products } from "@/data/products";
+import { useActiveProducts } from "@/hooks/useProducts";
 
 const categorias = [
   { nombre: "Elevadores", slug: "elevadores", img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80" },
@@ -20,6 +20,7 @@ const soluciones = [
 ];
 
 const Index = () => {
+  const { data: products = [] } = useActiveProducts();
   const destacados = products.filter(p => p.destacado).slice(0, 3);
 
   return (
@@ -28,14 +29,9 @@ const Index = () => {
       {/* HERO SECTION */}
       <section className="relative h-[80vh] flex items-center bg-black">
         <div className="absolute inset-0">
-          <img 
-            src={heroImg} 
-            alt="Equipo automotriz REDBUCK" 
-            className="w-full h-full object-cover opacity-40"
-          />
+          <img src={heroImg} alt="Equipo automotriz REDBUCK" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/30" />
         </div>
-        
         <div className="container relative z-10 px-4">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
@@ -46,14 +42,10 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/equipos">
-                <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-8 font-bold">
-                  VER EQUIPOS
-                </Button>
+                <Button size="lg" className="w-full sm:w-auto text-lg h-14 px-8 font-bold">VER EQUIPOS</Button>
               </Link>
               <Link to="/contacto">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-8 font-bold bg-white/10 text-white border-white/30 hover:bg-white hover:text-black">
-                  COTIZAR MI TALLER
-                </Button>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-8 font-bold bg-white/10 text-white border-white/30 hover:bg-white hover:text-black">COTIZAR MI TALLER</Button>
               </Link>
             </div>
           </div>
@@ -67,17 +59,12 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold uppercase mb-4">Categorías Principales</h2>
             <div className="h-1 w-20 bg-primary mx-auto"></div>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {categorias.map((cat) => (
               <Link key={cat.slug} to={`/categoria/${cat.slug}`} className="group block">
                 <Card className="overflow-hidden border-none shadow-md hover:shadow-xl transition-all">
                   <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={cat.img} 
-                      alt={cat.nombre} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    <img src={cat.img} alt={cat.nombre} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                   </div>
                   <CardContent className="p-6 bg-white flex items-center justify-between">
@@ -88,11 +75,8 @@ const Index = () => {
               </Link>
             ))}
           </div>
-          
           <div className="text-center mt-12">
-            <Link to="/equipos">
-              <Button variant="outline" className="h-12 px-8 font-bold uppercase">Ver todo el catálogo</Button>
-            </Link>
+            <Link to="/equipos"><Button variant="outline" className="h-12 px-8 font-bold uppercase">Ver todo el catálogo</Button></Link>
           </div>
         </div>
       </section>
@@ -103,10 +87,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold uppercase mb-6">Soluciones para tu negocio</h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Entendemos que cada negocio es diferente. Te asesoramos para elegir el equipo exacto que necesitas según tu espacio, presupuesto y tipo de vehículos que atiendes.
-              </p>
-              
+              <p className="text-muted-foreground text-lg mb-8">Entendemos que cada negocio es diferente. Te asesoramos para elegir el equipo exacto que necesitas según tu espacio, presupuesto y tipo de vehículos que atiendes.</p>
               <div className="space-y-6">
                 {soluciones.map((sol, i) => (
                   <div key={i} className="flex gap-4">
@@ -120,17 +101,12 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              
               <a href="https://wa.me/523313872649?text=Hola%2C%20me%20gustar%C3%ADa%20hablar%20con%20un%20asesor%20de%20Redbuck%20Equipment." target="_blank" rel="noopener noreferrer">
                 <Button className="mt-10 h-12 px-8 font-bold">SOLICITAR ASESORÍA</Button>
               </a>
             </div>
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80" 
-                alt="Taller equipado" 
-                className="rounded-lg shadow-2xl"
-              />
+              <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80" alt="Taller equipado" className="rounded-lg shadow-2xl" />
               <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-lg shadow-xl">
                 <p className="text-4xl font-bold mb-1">+1000</p>
                 <p className="font-semibold uppercase text-sm">Talleres Equipados</p>
@@ -152,7 +128,6 @@ const Index = () => {
               Ver todos <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {destacados.map(prod => (
               <Card key={prod.id} className="overflow-hidden flex flex-col">
@@ -163,11 +138,9 @@ const Index = () => {
                   <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">{prod.categoria}</div>
                   <h3 className="text-xl font-bold mb-2 line-clamp-2">{prod.nombre}</h3>
                   <p className="text-muted-foreground text-sm mb-6 flex-1 line-clamp-3">{prod.descripcionCorta}</p>
-                  <div className="flex gap-2">
-                    <Link to={`/producto/${prod.slug}`} className="flex-1">
-                      <Button variant="outline" className="w-full font-bold">VER DETALLE</Button>
-                    </Link>
-                  </div>
+                  <Link to={`/producto/${prod.slug}`} className="flex-1">
+                    <Button variant="outline" className="w-full font-bold">VER DETALLE</Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -179,7 +152,6 @@ const Index = () => {
       <section className="py-24 bg-black text-white">
         <div className="container px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold uppercase mb-16">¿Por qué elegir REDBUCK?</h2>
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div className="flex flex-col items-center">
               <ShieldCheck className="h-16 w-16 text-primary mb-6" />
@@ -217,7 +189,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };
