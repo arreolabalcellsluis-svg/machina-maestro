@@ -9,9 +9,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           
           {/* Brand Info */}
-          <div className="flex flex-col justify-center">
-            <img src={logoUrl} alt="REDBUCK Logo" className="h-40 mb-4 brightness-0 invert -mt-4" />
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+          <div className="flex flex-col">
+            <img src={logoUrl} alt="REDBUCK Logo" className="h-40 mb-2 brightness-0 invert" />
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
               Equipando los mejores talleres y llanteras de México. Maquinaria de grado industrial con soporte, garantía y refacciones.
             </p>
             <div className="flex gap-4">
