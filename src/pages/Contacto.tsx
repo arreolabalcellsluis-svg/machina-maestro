@@ -72,7 +72,7 @@ const Contacto = () => {
             
             <div className="w-full rounded-xl overflow-hidden border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.8!2d-103.394!3d20.659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b1f4a5b6c2e7%3A0x1234567890abcdef!2sARREOLA%20EQUIPOS%20Y%20SERVICIOS%20SA%20DE%20CV!5e0!3m2!1ses!2smx!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.0569228628797!2d-103.43329692475437!3d20.62653648092397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ac68564f86f3%3A0xf6b3e47375eeffe3!2sARREOLA%20EQUIPOS%20Y%20SERVICIOS%20SA%20DE%20CV!5e0!3m2!1ses-419!2smx!4v1773025861086!5m2!1ses-419!2smx"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
