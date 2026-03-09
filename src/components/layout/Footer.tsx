@@ -61,13 +61,17 @@ const Footer = () => {
                   <span>Av. Circunvalación Sur #4101, Col. Las Fuentes. C.P. 45070, Zapopan, Jalisco.</span>
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span>800 123 4567</span>
+              <li>
+                <a href="tel:8001234567" className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors">
+                  <Phone className="h-5 w-5 text-primary shrink-0" />
+                  <span>800 123 4567</span>
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-gray-400">
-                <Mail className="h-5 w-5 text-primary shrink-0" />
-                <span>ventas@redbuck.com.mx</span>
+              <li>
+                <a href="mailto:ventas@redbuck.com.mx" className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors">
+                  <Mail className="h-5 w-5 text-primary shrink-0" />
+                  <span>ventas@redbuck.com.mx</span>
+                </a>
               </li>
             </ul>
           </div>
