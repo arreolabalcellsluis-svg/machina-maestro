@@ -47,17 +47,24 @@ const Producto = () => {
           
           {/* Gallery Col */}
           <div className="space-y-4">
-            <div className="bg-secondary/20 border rounded-xl p-8 flex items-center justify-center h-[500px]">
+            <div 
+              className="bg-secondary/20 border rounded-xl p-8 flex items-center justify-center h-[500px] cursor-zoom-in"
+              onClick={() => openLightbox(selectedImage)}
+            >
               <img 
-                src={product.imagenPrincipal} 
+                src={allImages[selectedImage]} 
                 alt={product.nombre} 
                 className="max-h-full object-contain mix-blend-multiply"
               />
             </div>
-            {product.galeria.length > 1 && (
+            {allImages.length > 1 && (
               <div className="grid grid-cols-4 gap-4">
-                {product.galeria.map((img, i) => (
-                  <div key={i} className="bg-secondary/20 border rounded-lg p-2 h-24 flex items-center justify-center cursor-pointer hover:border-primary transition-colors">
+                {allImages.map((img, i) => (
+                  <div 
+                    key={i} 
+                    className={`bg-secondary/20 border-2 rounded-lg p-2 h-24 flex items-center justify-center cursor-pointer transition-colors ${selectedImage === i ? 'border-primary' : 'border-transparent hover:border-primary/50'}`}
+                    onClick={() => setSelectedImage(i)}
+                  >
                     <img src={img} alt="" className="max-h-full object-contain mix-blend-multiply" />
                   </div>
                 ))}
