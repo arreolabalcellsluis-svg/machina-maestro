@@ -42,7 +42,10 @@ export const products: Product[] = [
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80",
     galeria: [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80"
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80"
     ],
     garantia: "2 años en componentes estructurales, 1 año en sistema hidráulico.",
     instalacion: "Servicio de instalación disponible en todo México por técnicos certificados REDBUCK.",
@@ -88,7 +91,10 @@ export const products: Product[] = [
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80",
     galeria: [
-      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80"
+      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80"
     ],
     garantia: "1 año de garantía contra defectos de fábrica.",
     instalacion: "Instalación sencilla. Requiere conexión a compresor de aire y toma eléctrica estándar.",
@@ -133,7 +139,10 @@ export const products: Product[] = [
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80",
     galeria: [
-      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80"
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80"
     ],
     garantia: "1 año de garantía en componentes electrónicos.",
     instalacion: "Auto-instalable con manual en español y soporte por videollamada.",
@@ -175,7 +184,11 @@ export const products: Product[] = [
       "Agencias automotrices"
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80",
-    galeria: [],
+    galeria: [
+      "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80"
+    ],
     garantia: "1 año de garantía integral.",
     instalacion: "Instalación, calibración y capacitación presencial incluida.",
     refaccionesRelacionadas: ["Targets", "Mordazas"],
@@ -215,7 +228,11 @@ export const products: Product[] = [
       "Talleres de hojalatería y pintura"
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80",
-    galeria: [],
+    galeria: [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80"
+    ],
     garantia: "1 año.",
     instalacion: "Requiere instalación eléctrica trifásica.",
     refaccionesRelacionadas: ["Aceite compresor", "Filtro de aire", "Bandas"],
@@ -255,7 +272,11 @@ export const products: Product[] = [
       "Llanteras"
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80",
-    galeria: [],
+    galeria: [
+      "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80"
+    ],
     garantia: "6 meses.",
     instalacion: "No requiere.",
     refaccionesRelacionadas: ["Kit de sellos"],
