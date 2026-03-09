@@ -43,11 +43,15 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold uppercase tracking-wider mb-6">Categorías</h3>
             <ul className="space-y-3">
-              <li><Link to="/categoria/elevadores" className="text-gray-400 hover:text-primary transition-colors">Elevadores Automotrices</Link></li>
-              <li><Link to="/categoria/desmontadoras" className="text-gray-400 hover:text-primary transition-colors">Desmontadoras</Link></li>
+              <li><Link to="/categoria/alineadoras" className="text-gray-400 hover:text-primary transition-colors">Alineadoras</Link></li>
               <li><Link to="/categoria/balanceadoras" className="text-gray-400 hover:text-primary transition-colors">Balanceadoras</Link></li>
-              <li><Link to="/categoria/alineadoras" className="text-gray-400 hover:text-primary transition-colors">Alineadoras 3D</Link></li>
               <li><Link to="/categoria/compresores" className="text-gray-400 hover:text-primary transition-colors">Compresores de Aire</Link></li>
+              <li><Link to="/categoria/desmontadoras" className="text-gray-400 hover:text-primary transition-colors">Desmontadoras</Link></li>
+              <li><Link to="/categoria/elevadores" className="text-gray-400 hover:text-primary transition-colors">Elevadores Automotrices</Link></li>
+              <li><Link to="/categoria/equipo-de-diagnostico" className="text-gray-400 hover:text-primary transition-colors">Equipo de Diagnóstico</Link></li>
+              <li><Link to="/categoria/equipo-de-lubricacion" className="text-gray-400 hover:text-primary transition-colors">Equipo de Lubricación</Link></li>
+              <li><Link to="/categoria/equipo-hidraulico" className="text-gray-400 hover:text-primary transition-colors">Equipo Hidráulico</Link></li>
+              <li><Link to="/categoria/otros" className="text-gray-400 hover:text-primary transition-colors">Otros</Link></li>
             </ul>
           </div>
 
