@@ -65,7 +65,6 @@ export default function Admin() {
     return null;
   }
 
-  const [activeTab, setActiveTab] = useState<"products" | "banners">("products");
 
   return (
     <div className="container mx-auto p-8">
