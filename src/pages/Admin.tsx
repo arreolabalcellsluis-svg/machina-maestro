@@ -8,6 +8,7 @@ import BannerSettings from "@/components/admin/BannerSettings";
 export default function Admin() {
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<"products" | "banners">("products");
   const navigate = useNavigate();
   const { toast } = useToast();
 
