@@ -33,7 +33,7 @@ const Contacto = () => {
                 <div>
                   <h4 className="font-bold text-lg mb-1">Ventas</h4>
                   <p className="text-muted-foreground">33 1387 2649</p>
-                  <p className="text-muted-foreground">81 2345 6789</p>
+                  <p className="text-muted-foreground">33 3327 7030</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ const Contacto = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Horario</h4>
-                  <p className="text-muted-foreground">Lunes a Viernes<br/>9:00 am - 6:30 pm</p>
+                   <p className="text-muted-foreground">Lunes a Viernes<br/>8:30 am - 6:00 pm</p>
                   <p className="text-muted-foreground">Sábados<br/>9:00 am - 1:00 pm</p>
                 </div>
               </div>
