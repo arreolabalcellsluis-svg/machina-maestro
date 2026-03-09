@@ -42,7 +42,10 @@ export const products: Product[] = [
     ],
     imagenPrincipal: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80",
     galeria: [
-      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80"
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&q=80"
     ],
     garantia: "2 años en componentes estructurales, 1 año en sistema hidráulico.",
     instalacion: "Servicio de instalación disponible en todo México por técnicos certificados REDBUCK.",
