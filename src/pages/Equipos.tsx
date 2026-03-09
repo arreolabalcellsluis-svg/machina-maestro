@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { products } from "@/data/products";
+import { supabase } from "@/integrations/supabase/client";
 
 const extraCategorias = ["Equipo de lubricación", "Equipo de diagnóstico", "Otros"];
 const categorias = Array.from(new Set([...products.map(p => p.categoria), ...extraCategorias])).sort((a, b) => a.localeCompare(b, "es"));
