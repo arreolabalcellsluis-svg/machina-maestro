@@ -31,7 +31,7 @@ const Header = () => {
     { name: "Inicio", path: "/" },
     { name: "Equipos", path: "/equipos" },
     { name: "Soluciones", path: "/#soluciones", isHash: true },
-    { name: "Casos de éxito", path: "/#casos", isHash: true },
+    { name: "Nosotros", path: "/#nosotros", isHash: true },
     { name: "Contacto", path: "/contacto" },
   ];
 
