@@ -55,9 +55,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold uppercase tracking-wider mb-6">Contacto</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-gray-400">
-                <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <span>Av. Industrial 123, Parque Industrial, Monterrey, N.L.</span>
+              <li>
+                <a href="https://maps.app.goo.gl/SgWZRvVD5L3AUQ9QA" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-gray-400 hover:text-primary transition-colors">
+                  <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span>Av. Industrial 123, Parque Industrial, Monterrey, N.L.</span>
+                </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
