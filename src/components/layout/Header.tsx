@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, Search, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import logoUrl from "@/assets/logo-redbuck.png";
 
 const Header = () => {
