@@ -177,6 +177,48 @@ const Index = () => {
         </div>
       </section>
 
+      {/* NOSOTROS */}
+      <section id="nosotros" className="py-24 bg-secondary">
+        <div className="container px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold uppercase mb-4">Nosotros</h2>
+            <div className="h-1 w-20 bg-primary mx-auto"></div>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">Conoce quiénes somos y qué nos impulsa a equipar los mejores talleres de México.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Misión</h3>
+                <p className="text-muted-foreground leading-relaxed">Proveer equipo automotriz de alta calidad y rendimiento para talleres mecánicos y llanteras en toda la República Mexicana, impulsando el crecimiento de nuestros clientes.</p>
+              </CardContent>
+            </Card>
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Visión</h3>
+                <p className="text-muted-foreground leading-relaxed">Ser la marca líder en equipamiento automotriz en México, reconocida por la confiabilidad de nuestros productos y la excelencia en nuestro servicio al cliente.</p>
+              </CardContent>
+            </Card>
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Valores</h3>
+                <ul className="text-muted-foreground space-y-2">
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" /> Calidad en cada producto</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" /> Compromiso con el cliente</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" /> Innovación constante</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" /> Honestidad y transparencia</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Historia</h3>
+                <p className="text-muted-foreground leading-relaxed">REDBUCK nació con la misión de transformar la industria automotriz en México, ofreciendo equipos profesionales con respaldo técnico y garantía directa. Hoy equipamos más de 1,000 talleres en todo el país.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* COTIZA TU TALLER */}
       <section className="py-24 bg-white">
         <div className="container px-4 max-w-5xl">
