@@ -23,13 +23,15 @@ const Categoria = () => {
 
   return (
     <div className="bg-secondary/30 min-h-screen pb-20">
-      <div className="bg-black text-white py-16">
-        <div className="container px-4">
-          <Link to="/equipos" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-6 transition-colors text-sm font-semibold uppercase tracking-wider">
+      <div className="relative text-white py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/categoria-bg.png')" }} />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="container px-4 relative z-10">
+          <Link to="/equipos" className="inline-flex items-center gap-2 text-gray-300 hover:text-white mb-6 transition-colors text-sm font-semibold uppercase tracking-wider">
             <ArrowLeft className="h-4 w-4" /> Volver al catálogo general
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold uppercase mb-4">{categoriaNombre}</h1>
-          <p className="text-xl text-gray-400 max-w-2xl">Equipos de alto rendimiento diseñados para uso rudo profesional.</p>
+          <p className="text-xl text-gray-300 max-w-2xl">Equipos de alto rendimiento diseñados para uso rudo profesional.</p>
         </div>
       </div>
 
