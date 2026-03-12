@@ -5,12 +5,19 @@ const Contacto = () => {
   return (
     <div className="min-h-screen bg-secondary/30 pb-24">
       {/* Header Banner */}
-      <div className="bg-black text-white py-16">
-        <div className="container px-4">
-          <h1 className="text-4xl md:text-5xl font-bold uppercase mb-4">Contacto</h1>
-          <p className="text-xl text-gray-400 max-w-2xl">
-            Estamos listos para asesorarte y equipar tu taller con lo mejor de la industria.
-          </p>
+      <div className="bg-black text-white py-16 relative overflow-hidden">
+        <div className="container px-4 flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold uppercase mb-4">Contacto</h1>
+            <p className="text-xl text-gray-400 max-w-2xl">
+              Estamos listos para asesorarte y equipar tu taller con lo mejor de la industria.
+            </p>
+          </div>
+          <img
+            src="/images/mascota-redbuck.png"
+            alt="Mascota Redbuck Equipment"
+            className="hidden md:block h-64 lg:h-80 object-contain drop-shadow-2xl -my-8"
+          />
         </div>
       </div>
 
