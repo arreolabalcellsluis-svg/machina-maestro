@@ -92,7 +92,7 @@ const Equipos = () => {
                 <Card key={prod.id} className="overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
                   <div className="relative h-56 bg-white p-6 border-b group flex items-center justify-center">
                     {prod.destacado && <Badge className="absolute top-3 right-3 bg-primary z-10">Destacado</Badge>}
-                    <img src={prod.imagenPrincipal} alt={prod.nombre} className="max-h-full object-contain group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                    <img src={prod.imagenPrincipal} alt={prod.nombre} loading="lazy" width={400} height={224} className="max-h-full object-contain group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
                   </div>
                   <CardContent className="p-6 flex-1 flex flex-col bg-white">
                     <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">

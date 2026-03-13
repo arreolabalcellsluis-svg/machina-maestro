@@ -64,7 +64,7 @@ const Index = () => {
               <Link key={cat.slug} to={`/categoria/${cat.slug}`} className="group block">
                 <Card className="overflow-hidden border-none shadow-md hover:shadow-xl transition-all">
                   <div className="relative h-64 overflow-hidden">
-                    <img src={cat.img} alt={cat.nombre} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={cat.img} alt={cat.nombre} loading="lazy" width={400} height={256} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                   </div>
                   <CardContent className="p-6 bg-white flex items-center justify-between">
@@ -106,7 +106,7 @@ const Index = () => {
               </a>
             </div>
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80" alt="Taller equipado" className="rounded-lg shadow-2xl" />
+              <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80" alt="Taller equipado" loading="lazy" width={600} height={400} className="rounded-lg shadow-2xl" />
               <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-lg shadow-xl">
                 <p className="text-4xl font-bold mb-1">+1000</p>
                 <p className="font-semibold uppercase text-sm">Talleres Equipados</p>
@@ -132,7 +132,7 @@ const Index = () => {
             {destacados.map(prod => (
               <Card key={prod.id} className="overflow-hidden flex flex-col">
                 <div className="relative h-64 bg-white p-4">
-                  <img src={prod.imagenPrincipal} alt={prod.nombre} className="w-full h-full object-contain mix-blend-multiply" />
+                  <img src={prod.imagenPrincipal} alt={prod.nombre} loading="lazy" width={400} height={256} className="w-full h-full object-contain mix-blend-multiply" />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
                   <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">{prod.categoria}</div>
