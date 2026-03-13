@@ -46,7 +46,7 @@ const Producto = () => {
               <div className="grid grid-cols-4 gap-4">
                 {allImages.map((img, i) => (
                   <div key={i} className={`bg-secondary/20 border-2 rounded-lg p-2 h-24 flex items-center justify-center cursor-pointer transition-colors ${selectedImage === i ? 'border-primary' : 'border-transparent hover:border-primary/50'}`} onClick={() => setSelectedImage(i)}>
-                    <img src={img} alt="" className="max-h-full object-contain mix-blend-multiply" />
+                    <img src={img} alt="" loading="lazy" width={120} height={96} className="max-h-full object-contain mix-blend-multiply" />
                   </div>
                 ))}
               </div>

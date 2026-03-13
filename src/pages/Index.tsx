@@ -132,7 +132,7 @@ const Index = () => {
             {destacados.map(prod => (
               <Card key={prod.id} className="overflow-hidden flex flex-col">
                 <div className="relative h-64 bg-white p-4">
-                  <img src={prod.imagenPrincipal} alt={prod.nombre} className="w-full h-full object-contain mix-blend-multiply" />
+                  <img src={prod.imagenPrincipal} alt={prod.nombre} loading="lazy" width={400} height={256} className="w-full h-full object-contain mix-blend-multiply" />
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
                   <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">{prod.categoria}</div>
