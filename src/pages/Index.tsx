@@ -106,7 +106,7 @@ const Index = () => {
               </a>
             </div>
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80" alt="Taller equipado" className="rounded-lg shadow-2xl" />
+              <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80" alt="Taller equipado" loading="lazy" width={600} height={400} className="rounded-lg shadow-2xl" />
               <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-lg shadow-xl">
                 <p className="text-4xl font-bold mb-1">+1000</p>
                 <p className="font-semibold uppercase text-sm">Talleres Equipados</p>
