@@ -64,7 +64,7 @@ const Index = () => {
               <Link key={cat.slug} to={`/categoria/${cat.slug}`} className="group block">
                 <Card className="overflow-hidden border-none shadow-md hover:shadow-xl transition-all">
                   <div className="relative h-64 overflow-hidden">
-                    <img src={cat.img} alt={cat.nombre} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={cat.img} alt={cat.nombre} loading="lazy" width={400} height={256} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                   </div>
                   <CardContent className="p-6 bg-white flex items-center justify-between">
