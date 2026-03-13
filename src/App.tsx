@@ -33,13 +33,13 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Index />} />
-            <Route path="equipos" element={<Equipos />} />
-            <Route path="categoria/:slug" element={<Categoria />} />
-            <Route path="producto/:slug" element={<Producto />} />
-            <Route path="contacto" element={<Contacto />} />
-            <Route path="login" element={<Login />} />
-            <Route path="admin" element={<Admin />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="equipos" element={<Suspense fallback={<PageLoader />}><Equipos /></Suspense>} />
+            <Route path="categoria/:slug" element={<Suspense fallback={<PageLoader />}><Categoria /></Suspense>} />
+            <Route path="producto/:slug" element={<Suspense fallback={<PageLoader />}><Producto /></Suspense>} />
+            <Route path="contacto" element={<Suspense fallback={<PageLoader />}><Contacto /></Suspense>} />
+            <Route path="login" element={<Suspense fallback={<PageLoader />}><Login /></Suspense>} />
+            <Route path="admin" element={<Suspense fallback={<PageLoader />}><Admin /></Suspense>} />
+            <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
           </Route>
         </Routes>
       </BrowserRouter>
